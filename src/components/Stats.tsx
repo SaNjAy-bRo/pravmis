@@ -31,7 +31,7 @@ export default function Stats() {
                   <stat.icon size={20} className="md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <div className="text-2xl md:text-4xl font-black text-primary-electric mb-1 tracking-tight">
+                  <div className="text-2xl md:text-4xl font-black text-primary-dark mb-1 tracking-tight">
                     {stat.value}
                   </div>
                   <div className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-slate-400">

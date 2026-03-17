@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, PhoneCall } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [topOffset, setTopOffset] = useState(32); // Initial height of ISO bar
 
   // Handle scroll lock for mobile menu
   useEffect(() => {
@@ -22,7 +23,19 @@ export default function Navbar() {
   }, [isOpen]);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 20);
+      
+      // ISO bar is roughly 32px high. It's relative, so it scrolls away. 
+      // Navbar follows it until it hits top-0.
+      const newTop = Math.max(0, 32 - scrollY);
+      setTopOffset(newTop);
+    };
+    
+    // Set initial
+    handleScroll();
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -30,15 +43,25 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "#" },
     { name: "About Us", href: "#about" },
-    { name: "Products", href: "#products" },
-    { name: "Turnkey Projects", href: "#projects" },
-    { name: "Clients", href: "#clients" },
+    { name: "Service", href: "#products" },
+    { name: "Contact Us", href: "#contact" },
   ];
 
   return (
     <>
+      {/* ISO Top Bar - Relative positioning so it scrolls away naturally */}
+      <div className="bg-primary-dark border-b border-white/5 py-2 relative z-[1001] h-[32px] flex items-center justify-center">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex justify-center items-center text-secondary text-[0.45rem] md:text-[0.65rem] font-black uppercase tracking-[0.2em] md:tracking-[0.4em] text-center">
+            <span className="leading-tight">ISO 9001:2015 & 13485:2016 Certified Excellence</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Header - Fixed, but offset by the ISO bar initially */}
       <header
-        className={`fixed top-0 w-full z-[999] transition-all duration-500 py-4 ${
+        style={{ top: `${topOffset}px` }}
+        className={`fixed left-0 w-full z-[999] transition-colors duration-500 py-4 ${
           scrolled
             ? "bg-white/90 backdrop-blur-xl shadow-xl shadow-blue-900/5 py-3 border-b border-slate-100"
             : "bg-transparent"
@@ -135,7 +158,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="text-5xl font-black text-white hover:text-secondary transition-all uppercase tracking-tighter"
+                    className="text-3xl font-black text-white hover:text-secondary transition-all uppercase tracking-tighter"
                   >
                     {link.name}
                   </Link>

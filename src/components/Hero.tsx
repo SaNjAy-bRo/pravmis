@@ -19,15 +19,6 @@ export default function Hero() {
 
       <div className="container mx-auto relative z-20">
         <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-secondary text-primary-dark mb-12 text-[0.65rem] md:text-xs font-black uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(195,224,49,0.3)] border-2 border-primary-dark/10"
-          >
-            <ShieldCheck size={18} className="text-primary-dark" />
-            <span>ISO 9001:2015 & 13485:2016 Certified Excellence</span>
-          </motion.div>
 
           <div className="mb-10">
             <motion.h1
@@ -71,7 +62,7 @@ export default function Hero() {
               href="#products"
               className="w-full sm:w-auto px-12 py-6 bg-secondary hover:bg-white text-primary-dark font-black rounded-2xl shadow-[0_25px_50px_-12px_rgba(195,224,49,0.4)] transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-4 group text-lg"
             >
-              <span>Explore Portfolio</span>
+              <span>Explore Service</span>
               <ArrowRight size={22} className="group-hover:translate-x-2 transition-transform duration-300" />
             </a>
             <a
