@@ -87,7 +87,7 @@ export default function ProductsGrid() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: prod.delay }}
-              className={`group relative p-12 rounded-[3rem] bg-white border border-slate-100 hover:border-secondary/30 hover:shadow-[0_40px_80px_-15px_rgba(46,49,146,0.1)] transition-all duration-700 hover:-translate-y-3`}
+              className={`group relative p-12 rounded-[3rem] bg-white border border-slate-100 hover:border-secondary/50 hover:shadow-[0_40px_80px_-15px_rgba(195,224,49,0.15)] transition-all duration-700 hover:-translate-y-3`}
             >
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-10">

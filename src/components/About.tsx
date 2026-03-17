@@ -31,18 +31,15 @@ export default function About() {
           >
             <div className="relative z-10 aspect-[4/5] md:aspect-square rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(46,49,146,0.15)] border-[12px] border-slate-50/50">
               <img
-                src="/images/about-medical.jpg" 
+                src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop" 
                 alt="Pravmis Global Excellence"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop';
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 via-transparent to-transparent" />
               
-              <div className="absolute bottom-8 right-8 z-30 bg-secondary p-8 rounded-[2rem] shadow-2xl shadow-secondary/30">
-                <p className="text-6xl font-black text-primary tracking-tighter italic">22+</p>
-                <p className="text-xs font-black text-primary/70 uppercase tracking-[0.25em] mt-2">Years of Trust</p>
+              <div className="absolute bottom-8 right-8 z-30 bg-secondary p-8 rounded-[2rem] shadow-2xl shadow-secondary/40">
+                <p className="text-6xl font-black text-primary-dark tracking-tighter italic">22+</p>
+                <p className="text-xs font-black text-primary-dark/70 uppercase tracking-[0.25em] mt-2">Years of Trust</p>
               </div>
             </div>
             
@@ -73,13 +70,13 @@ export default function About() {
             </div>
 
             {/* Values Grid */}
-            <div className="grid grid-cols-2 gap-4 mt-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-12">
               {values.map((v, i) => (
-                <div key={i} className="flex items-center gap-5 bg-slate-50 p-6 rounded-[2rem] border border-slate-100/80 hover:border-secondary/50 group transition-all duration-300">
-                  <div className="w-12 h-12 rounded-2xl bg-white shadow-xl shadow-blue-900/5 flex items-center justify-center flex-shrink-0 text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
-                    <v.icon size={24} />
+                <div key={i} className="flex items-center gap-4 bg-slate-50 p-5 rounded-[2rem] border border-slate-100/80 hover:border-secondary/50 group transition-all duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-white shadow-xl shadow-blue-900/5 flex items-center justify-center flex-shrink-0 text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+                    <v.icon size={20} />
                   </div>
-                  <span className="font-black text-slate-800 text-xs uppercase tracking-widest">{v.title}</span>
+                  <span className="font-black text-slate-800 text-[0.6rem] md:text-xs uppercase tracking-widest">{v.title}</span>
                 </div>
               ))}
             </div>

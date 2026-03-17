@@ -3,11 +3,13 @@
 @theme {
   --font-sans: "Plus Jakarta Sans", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-primary: #2E3192;
-  --color-primary-dark: #1d1f5e;
-  --color-secondary: #8DC63F;
-  --color-accent: #00AEEF;
-  --color-background-soft: #F8FAFC;
+  --color-primary: #1a365d;
+  --color-primary-electric: #00A3DF;
+  --color-primary-dark: #001a4d;
+  --color-secondary: #c3e031;
+  --color-secondary-soft: #8DC63F;
+  --color-accent: #00d2ff;
+  --color-background-soft: #f0f7ff;
 
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
